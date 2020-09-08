@@ -1,0 +1,36 @@
+#!/usr/bin/env sh
+
+user="${USER-$(id -u -n)}"
+
+host="crackintosh"
+
+os="$PRETTY_NAME"
+
+shell="${SHELL##*/}"
+
+term='iterm2'
+
+wm='yabai'
+
+c0='[0m'
+c1='[31m'; c2='[32m'
+c3='[33m'; c4='[34m'
+c5='[35m'; c6='[36m'
+c7='[37m'; c8='[38m'
+
+palette="[7m$c1 $c1 $c2 $c2 $c3 $c3 $c4 $c4 $c5 $c5 $c6 $c6 [m"
+
+ARTR1="${c0" ______   "
+ARTR2="${c0}| |__| |  "
+ARTR3="${c0}|  ()  |  "
+ARTR4="${c0}|______|  "
+
+cat <<-EOF
+
+ ${ARTR1}${c3}${user}${c0}@${c0}${host}
+ ${ARTR2}${c3}shell${c0}  ${shell}
+ ${ARTR3}${c3}wm${c0}     ${wm}
+ ${ARTR4}${c3}term${c0}   ${term}
+
+             ${palette}
+EOF
